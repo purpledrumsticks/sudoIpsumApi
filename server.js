@@ -4,7 +4,7 @@ let app = express();
 
 
 const corsOptions = {
-  origin: 'https://sudo-ipsum.herokuapp.com',
+  origin: 'https://sudo-ipsum.herokuapp.com/sudoIpsum',
   optionsSuccessStatus: 200
 }
 
