@@ -1,14 +1,13 @@
 let express = require('express');
-let cors = require('cors');
 let app = express();
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
-const corsOptions = {
-  origin: 'https://sudo-ipsum.herokuapp.com/sudoIpsum',
-  optionsSuccessStatus: 200
-}
-
-app.get('/:sudoIpsum', cors(corsOptions), (req, res) => {
+app.get('/:sudoIpsum', (req, res) => {
    // variables defined in the Swagger document can be referenced using req.swagger.params.{parameter_name}
    const shuffle = function (array) {
      let tmp, current, top = array.length;
