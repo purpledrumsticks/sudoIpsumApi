@@ -1,6 +1,8 @@
 let express = require('express');
 let app = express();
 
+app.use(allowCrossDomain)
+
 app.get('/:sudoIpsum', (req, res) => {
    // variables defined in the Swagger document can be referenced using req.swagger.params.{parameter_name}
    const shuffle = function (array) {
